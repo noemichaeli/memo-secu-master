@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!--<item android:drawable="@color/main_bg_color"/>-->
+    <item>
+        <shape>
+            <solid android:color="@color/background_input"/>
+        </shape>
+    </item>
+
+    <item
+        android:gravity="bottom"
+        android:bottom="8dp"
+        android:left="14dp"
+        android:right="14dp">
+        <shape android:shape="rectangle">
+            <size android:height="1dp"/>
+            <solid android:color="@color/input_bar"/>
+        </shape>
+    </item>
+</layer-list>
