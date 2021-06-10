@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:remove="android:appComponentFactory"
+    package="com.app.memosecu"
+          android:versionCode="23"
+          android:versionName="1.18">
+
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+
+
+    <application
+        android:icon="@drawable/memosecu"
+        android:label="@string/app_name_short"
+        android:name="com.app.memosecu.MSApplication"
+        android:backupAgent="com.app.memosecu.MSBackupAgent"
+        android:allowBackup="false">
+
+        <meta-data android:name="com.google.android.backup.api_key"
+            android:value="AEdPqrEAAAAIdH-Kshc9o3yIinx_ZyTF-Cs8t9SIFljMNICcsw"/>
+
+
+        <activity android:name="com.app.memosecu.AppEntryActivity">
+
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN"/>
+            <category android:name="android.intent.category.LAUNCHER"/>
+        </intent-filter>
+
+        </activity>
+        <activity android:name="com.app.memosecu.Fingerprint">
+
+        </activity>
+        <activity android:name="com.app.memosecu.EnterMasterPassword">
+        </activity>
+
+        <activity android:name="com.app.memosecu.FullAccountList">
+            <meta-data android:name="android.app.default_searchable"
+                       android:value=".SearchResults" />
+        </activity>
+
+        <activity android:name="com.app.memosecu.ViewAccountDetails">
+        </activity>
+
+        <activity android:name="com.app.memosecu.CreateNewDatabase">
+        </activity>
+
+        <activity
+            android:name="com.app.memosecu.AddEditAccount"
+            android:windowSoftInputMode="adjustPan">
+        </activity>
+
+        <activity android:name="com.app.memosecu.ChangeMasterPassword">
+        </activity>
+
+
+        <activity android:name="com.app.memosecu.SearchResults"
+                  android:label="@string/search_results"
+                  android:launchMode="singleTop"
+                  android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+            </intent-filter>
+
+            <meta-data android:name="android.app.searchable"
+                       android:resource="@xml/searchable"/>
+        </activity>
+
+        <activity android:name="com.app.memosecu.Prefs" android:label="@string/settings_title"/>
+
+    </application>
+
+</manifest>
